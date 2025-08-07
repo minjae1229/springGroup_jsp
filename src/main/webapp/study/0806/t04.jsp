@@ -22,7 +22,7 @@
   <h2>회원가입</h2>
   <form name="myform" method="post" action="<%=request.getContextPath()%>/j0806/T04">
     <div class="mb-3">성명
-      <input type="text" name="name" value="hongkildong" class="form-control" autofocus required />
+      <input type="text" name="name" value="홍길동" class="form-control" autofocus required />
     </div>
     <div class="mb-3">나이
       <input type="number" name="age" value="20" class="form-control" required />

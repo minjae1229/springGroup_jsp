@@ -1,6 +1,7 @@
 package study.j0806;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,9 @@ public class T04 extends HttpServlet{
     // null 체크
     String name = (request.getParameter("name")==null) ? "" : request.getParameter("name");
     int age = (request.getParameter("age")==null || request.getParameter("age").equals("")) ? 0 : Integer.parseInt(request.getParameter("age"));
+    
+    // get 방식의 전송의 경우 한글이 깨지는 경우 발생, encode 사용해서 해결
+    name = URLEncoder.encode(name, "utf-8");
     
     // DB처리 완료 후 성공여부를 jsp로 보내준다.
     
