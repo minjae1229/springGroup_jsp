@@ -1,20 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<%--
-  성적자료를 입력받아(html form tag) -> 추가 버튼을 누르면 하면 한 줄씩 출력, 내용은 VO에 저장.
-  받은 데이터를 servlet으로 이동 후 view에서 출력.
-  VO를 서버로 넘겨서 처리 후 출력.
-  view) 총점, 평균, 학점, 순위 를 구해서 출력하시오.
-  (동적폼을 만들어서 여러개 입력받을수 있도록 처리)
- --%>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>ex3-1 test</title>
   <jsp:include page="/include/bs5.jsp" />
-  <title>ex03_vos2.jsp</title>
-<script>
+  <script>
     'use strict';
     let names = [], kors = [], engs= [], mats = [];
     let lineCount = 1;
@@ -127,7 +118,7 @@
 <body>
 <div class="container mt-4">
   <h2>성적 입력</h2>
-  <form name="myform" method="post" action="<%=request.getContextPath()%>/exam/EX03_2">
+  <form name="myform" method="post" action="<%=request.getContextPath()%>/exam/EX03_1">
     <div class="mb-3">이름
       <input type="text" name="name" class="form-control" autofocus required />
     </div>
