@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,9 +20,9 @@ public class LoginSearch1 extends HttpServlet {
   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
     LoginDAO dao = new LoginDAO();
-    LoginVO vo = dao.getLoginIdCheck(mid);
+    LoginVO vo = dao.getLoginIdCheck(mid); // 아이디 찾기 method
     
-    Map<String, String> map = new HashMap<String, String>();
+    Map<String, String> map = new HashMap<String, String>(); // key, value
     map.put("mid", vo.getMid());
     map.put("nickName", vo.getNickName());
     map.put("name", vo.getName());
@@ -35,7 +34,7 @@ public class LoginSearch1 extends HttpServlet {
     // map 형식의 자료를 JSON 형식으로 변환
     JSONObject jObj = new JSONObject(map);
     System.out.println("jObj : "+jObj);
-    response.getWriter().write(jObj + "");
+    response.getWriter().write(jObj + ""); // JSON 형식을 단순 출력만 함.
     
     // JSON 객체를 문자열로 변환
 //    String str = jObj.toJSONString();
